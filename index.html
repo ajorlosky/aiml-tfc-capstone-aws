@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Proficiency Exam Evaluator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="images/globe.png" alt="Globe" class="globe-image">
+            </div>
+            <h1>English Proficiency Exam Evaluator</h1>
+            <p class="subtitle">Analyze your speaking skills and receive detailed feedback</p>
+        </header>
+        
+        <main>
+            <section class="intro-section">
+                <div class="info-box">
+                    <h3>How It Works</h3>
+                    <ol>
+                        <li>Upload your speaking exam audio recording</li>
+                        <li>Our system will transcribe your speech</li>
+                        <li>AI will evaluate your English proficiency level (A1-C2)</li>
+                        <li>View detailed feedback on pronunciation, grammar, vocabulary, and fluency</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="upload-section">
+                <h2>Upload Your Speaking Exam Recording</h2>
+                <p class="section-description">Upload an audio recording of your speaking test response. Supported formats: MP3, WAV, M4A (Max size: 100MB)</p>
+                <div class="upload-container">
+                    <div id="drop-area">
+                        <form id="upload-form">
+                            <p>Drag and drop your audio recording here or</p>
+                            <input type="file" id="file-input" accept="audio/*" />
+                            <label for="file-input" class="button">Select Audio File</label>
+                        </form>
+                        <div id="file-info"></div>
+                    </div>
+                    <button id="upload-button" class="primary-button" disabled>Upload Recording</button>
+                </div>
+                <div id="upload-progress" class="hidden">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p id="progress-text">Uploading: 0%</p>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <h2>Evaluation Results</h2>
+                <p class="section-description">Your speaking exam evaluations will appear here. View transcriptions, detailed evaluations, and proficiency level assessments.</p>
+                <div class="results-container">
+                    <div class="results-controls">
+                        <button id="refresh-button" class="secondary-button">Refresh Results</button>
+                    </div>
+                    <div id="results-list">
+                        <p class="no-results">No evaluations available. Upload a speaking exam recording to get started.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>English Proficiency Exam Evaluator | Powered by AWS S3, Transcribe, and Bedrock AI</p>
+        </footer>
+    </div>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1048.0.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
